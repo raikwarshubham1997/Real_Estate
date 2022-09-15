@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechPanda Real Estate</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" />
+       <!--CUSTOM BASIC STYLES-->
+    <link href="{% static 'assets/css/basic.css' %}" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="{% static 'assets/css/custom.css' %}" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand " href="/saddmin/dashboard/"><img style="width: 250px;" src="{% static 'img/slider/logo-1.png' %}" alt="img"></a>
+            </div>
+
+            <div class="header-right">
+
+                <a href="/logout/" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
+
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            <img src="{% static 'assets/img/user.png' %}" class="img-thumbnail" title="Homepage"/>
+
+                            <div class="inner-text">
+                                {{ request.user }} 
+                            <br />
+                                <small>Join Date : {{user.date_joined}}</small>
+                            </div>
+                        </div>
+
+                    </li>
+
+
+                    <li>
+                        <a class="active-menu" href="/saddmin/dashboard/"><i class="fa fa-dashboard "></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-desktop "></i>Property Type<span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/saddmin/propertType/"><i class="fa fa-toggle-on"></i>Add Property Type</a>
+                            </li>
+                            <li>
+                                <a href="/saddmin/getproperties/"><i class="fa fa-bell "></i>Manage Property Type</a>
+                            </li>
+                             
+                           
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-yelp "></i>Country<span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/saddmin/country/"><i class="fa fa-toggle-on"></i>Add Country</a>
+                            </li>
+                            <li>
+                                <a href="/saddmin/getcountry/"><i class="fa fa-bell "></i>Manage Country</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                     <li>
+                        <a href="#"><i class="fa fa-yelp "></i>State<span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/saddmin/state/"><i class="fa fa-toggle-on"></i>Add State</a>
+                            </li>
+                            <li>
+                                <a href="/saddmin/getstate/"><i class="fa fa-bell "></i>Manage State</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-bicycle "></i>City <span class="fa arrow"></span></a>
+                       <ul class="nav nav-second-level">
+                         
+                           <li>
+                              <a href="/saddmin/city/"><i class="fa fa-toggle-on"></i>Add City</a>
+                          </li>
+                           <li>
+                              <a href="/saddmin/getcity/"><i class="fa fa-bell "></i>Manage City</a>
+                          </li>
+    
+                      </ul>
+                  </li>
+                   
+                     
+                      <li>
+                        <a href="/saddmin/agent_property/"><i class="fa fa-user "></i>Agents</a>
+                    </li>
+                     <li>
+                        <a href="/saddmin/user/"><i class="fa fa-user "></i>User</a>
+                    </li>
+                    <li>
+                        <a href="/saddmin/client/"><i class="fa fa-sign-in "></i>List of Properties</a>
+                    </li>
+                   
+                    <li>
+                        <a href="#"><i class="fa fa-quote-right"></i>Reviews</a>
+                    </li>
+                    
+                  <li>
+                    <a href="/saddmin/contact/"><i class="fa fa-key "></i>Contact By Client</a>
+                </li>
+                <li>
+                  <a href="/logout/"><i class="fa fa-close "></i>Logout</a>
+              </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">DASHBOARD</h1>
+                        
+                        <p class="page-subhead-line"><a href="/">Home /</a></p>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="main-box mb-pink card card-body" style="background-color: #007BFF;color: antiquewhite;">
+                          <a href="#">                            
+                              <h5 style="color: antiquewhite;">Total Admin Property</h5>
+                          </a>
+                          <hr>
+                          <h1 style="text-align: center;padding: 10px;color: antiquewhite;"><i class="fa fa-group "></i> {{current_user_property}}</h1>
+                      </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="main-box mb-pink card card-body" style="background-color: #6C757D;color: antiquewhite;">
+                          <a href="#">                            
+                              <h5 style="color: antiquewhite;">Total Broker / Agent Listed</h5>
+                          </a>
+                          <hr>
+                          <h1 style="text-align: center;padding: 10px;color: antiquewhite;"><i class="fa fa-group "></i> {{count_agent_property}}</h1>
+                      </div>
+                    </div>     
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                        <div class="main-box mb-pink card card-body" style="background-color: #343A40;color: antiquewhite;">
+                          <a href="#">                            
+                              <h5 style="color: antiquewhite;"><a href="/saddmin/user/" style="text-decoration: none;color: antiquewhite;">Total Listed User</a></h5>
+                          </a>
+                          <hr>
+                          <h1 style="text-align: center;padding: 10px;color: antiquewhite;"><i class="fa fa-user "></i> {{ user_count }}</h1>
+                      </div>
+                      </div>
+                    
+                    <div class="col-md-6">
+                      <div class="main-box mb-pink card card-body" style="background-color: #DD4B39;color: antiquewhite;">
+                        <a href="/saddmin/client/">                            
+                            <h5 style="color: antiquewhite;">Total Post Enquiry</h5>
+                        </a>
+                        <hr>
+                        <h1 style="text-align: center;padding: 10px;color: antiquewhite;"><i class="fa fa-line-chart "></i> {{ total_enquiry }}</h1>
+                    </div>
+                    </div>
+                   
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                      <div class="main-box mb-pink card card-body" style="background-color: #28A745;">
+                        <a href="#">                            
+                            <h5><a href="/saddmin/getproperties/" style="text-decoration: none;color: antiquewhite;">Total Property Type</a></h5>
+                        </a>
+                        <hr>
+                        
+                        <h1 style="text-align: center;padding: 10px; color: antiquewhite;"><i class="fa fa-bar-chart-o "> </i> {{prop_counts}}</h1>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="main-box mb-pink card card-body" style="background-color: #DC3545;color: antiquewhite;">
+                        <a href="#">                            
+                            <h5><a href="/saddmin/getstate/" style="text-decoration: none;color: antiquewhite;">Total State</a></h5>
+                        </a>
+                        <hr>
+                        <h1 style="text-align: center;padding: 10px"><i class="fa fa-bookmark "></i> {{state_count}}</h1>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="main-box mb-pink card card-body" style="background-color: #FFC107;">
+                        <a href="#">                            
+                            <h5><a href="/saddmin/getcity/" style="text-decoration: none;color: antiquewhite;">Total City</a></h5>
+                        </a>
+                        <hr>
+                        <h1 style="text-align: center;padding: 10px;color: antiquewhite;"><i class="fa fa-building-o "></i> {{city_count}}</h1>
+                    </div>
+                    </div>
+                </div>
+           
+  </div>
+  
+    <div id="footer-sec">
+        &copy; 2014 YourCompany | Design By : <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+    </div>
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{% static 'assets/js/jquery-1.10.2.js' %}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{% static 'assets/js/bootstrap.js' %}"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="{% static 'assets/js/jquery.metisMenu.js' %}"></script>
+       <!-- CUSTOM SCRIPTS -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    
+
+
+</body>
+</html>

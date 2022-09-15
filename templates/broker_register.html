@@ -1,0 +1,186 @@
+<!-- <html>
+<head>
+	<title>TechPanda Real Estate</title>
+	
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+</head>
+<body>
+	<h1>Signup Here!</h1>
+	<div style="background-color: #76e268;width: 100%;">
+    {% if messages %}
+    {% for message in messages %}
+        <h2 style="">{{ message }}</h2>
+    {% endfor %}
+{% endif %}
+</div>
+	<form method="post" align="center">
+		{% csrf_token %}
+		Enter FirstName: <input type="text" name="nm"><br>
+		Enter UserName: <input type="text" name="un"><br>
+		Enter Password: <input type="password" name="pwd"><br>
+		Admin: <input type="radio" name="role" value="admin">
+		Broker: <input type="radio" name="role" value="broker">
+		User: <input type="radio" name="role" value="user"><br>
+		Signup: <input type="submit" value="Signup">
+	</form>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+ <style>
+  body{
+    margin-top: 100px;
+  }
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 8px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  margin-left: 34%;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 30%;
+}
+/* Check Button css */
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: justify;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #d5d0d0;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid rgb(216, 201, 201);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+</style>
+</head>
+<body>
+    
+		
+
+
+	
+<div>
+  <h3 align="center">Create a new Business Account</h1>
+	<form method="post" style="padding-top: 70px;">
+    {% if messages %}
+		{% for message in messages %}
+			<p style="background-color: #76e268;padding-left: 20px;">{{ message }}</p>
+		{% endfor %}
+	{% endif %}
+	{% csrf_token %}
+    <label for="fname" class="lab">First Name</label>
+    <input type="text" id="fname" placeholder="Your name.." name="nm">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lnm" placeholder="Your last name..">
+
+	  <label for="email">Email Address</label>
+    <input type="text" id="email" name="email" placeholder="E.g : example@gmail.com">
+
+    <label for="lname" class="lab">Username</label>
+    <input type="text" id="lname" placeholder="Your last name.." name="un">
+
+	<label for="lname" class="lab">Password</label>
+    <input type="text" class="form-control" id="lname" placeholder="Enter password" name="pwd">
+
+
+
+
+    <input type="submit" value="Signup">
+    <p style="font-size: 19px;text-align: center">
+      <a href="/saler/">Already have an account?</a>
+    </p>
+    
+  </form>
+</div>
+
+</body>
+</html> 
