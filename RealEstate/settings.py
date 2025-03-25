@@ -80,6 +80,12 @@ WSGI_APPLICATION = 'RealEstate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+'''
+# for other database connectivity install pymyclient register variable on 
+ __init__.py 
+ (import pymysql
+pymysql.install_as_MySQLdb())
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
